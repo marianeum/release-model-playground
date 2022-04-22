@@ -10,7 +10,6 @@ categories:
 exclude-labels:
   - 'skip-changelog'
   - 'release'
-change-template: '- $TITLE (#$NUMBER)'
 version-resolver:
   major:
     labels:
