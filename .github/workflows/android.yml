@@ -21,5 +21,7 @@ jobs:
       run: chmod +x gradlew
     - name: Check credentials
       run: ./gradlew checkCredentials
+      env:
+        BIG_SECRET: ${{ secrets.BIG_SECRET }}
     - name: Build with Gradle
       run: ./gradlew build
