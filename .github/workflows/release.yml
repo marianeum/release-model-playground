@@ -13,4 +13,4 @@ jobs:
           fetch-depth: 0
       - name: Assemble
         id: assemble
-        run: ./gradlew assemble -Pversion=${{ github.event.release.tag_name }}"
+        run: ./gradlew assemble -Pversion=${{ github.event.release.tag_name }}
