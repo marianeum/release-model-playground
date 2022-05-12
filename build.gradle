@@ -19,7 +19,11 @@ ext["BIG_SECRET"] = ''
 
 def properties = new Properties()
 properties.putAll(System.getenv())
-properties.each { name, value -> if (ext[name] != null) ext[name] = value }
+properties.each { name, value ->
+  if (ext.has(name)) { 
+    ext[name] = value
+  }
+}
 
 scmVersion {
     tag {
