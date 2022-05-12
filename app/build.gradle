@@ -3,8 +3,6 @@ plugins {
     id 'kotlin-android'
 }
 
-ext["BIG_SECRET"] = ''
-
 File localProps = rootProject.file('local.properties')
 
 def properties = new Properties()
@@ -12,7 +10,6 @@ properties.putAll(System.getenv())
 if (rootProject.file("local.properties").exists()) {
   properties.load(rootProject.file("local.properties").newDataInputStream())
 }
-properties.each { name, value -> ext[name] = value }
 
 
 android {
