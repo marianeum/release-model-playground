@@ -20,7 +20,9 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Check credentials
-      run: ./gradlew checkCredentials
+      run: >
+        ./gradlew checkCredentials
+        build
       env:
         BIG_SECRET: ${{ secrets.BIG_SECRET }}
     - name: Build with Gradle
