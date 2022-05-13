@@ -6,6 +6,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    environment: release
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -13,7 +14,6 @@ jobs:
           fetch-depth: 0
       - name: Check credentials
         run: ./gradlew checkCredentials
-        environment: release
         env:
           BIG_SECRET: ${{ secrets.BIG_SECRET }}
       - name: Assemble
